@@ -9,7 +9,7 @@ Starting from scratch, setting up and running a single stage consists of three s
 
 1. Downloading the corresponding image from DockerHub, or building it with its Dockerfile
 2. Mounting user-specified files and directories
-3. Running the image as a container
+3. Running the stage in a container
 
 To run the whole workflow, you must run each image (we are currently working on a fully end-to-end solution). Detailed information about running the images' containers for a specific stage can be found in a Markdown file in its respective directory.
 
