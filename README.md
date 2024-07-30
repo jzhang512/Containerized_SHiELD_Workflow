@@ -1,8 +1,9 @@
 <img width="813" alt="Screenshot 2024-07-29 at 3 43 59 PM" src="https://github.com/user-attachments/assets/425090e3-0406-4a21-b06f-024b9258b2c7">
-We break the workflow of using Geophysical Fluid Dynamics Laboratory (GFDL)'s System for High-resolution modeling for Earth-to-Local Domains (SHiELD) into three stages: pre-processing, model execution, post-processing.
+
+We render the workflow of using Geophysical Fluid Dynamics Laboratory (GFDL)'s System for High-resolution modeling for Earth-to-Local Domains (SHiELD) into three stages: pre-processing, model execution, post-processing.
 
 ## Usage
-Each workflow stage has its own image, which can be pulled directly from DockerHub (see below). We also provide the Dockerfiles and corresponding scripts if you would like to make further modifications. 
+Each stage has its own image, which can be pulled directly from DockerHub (see below). We also provide the Dockerfiles and corresponding scripts if you would like to make further modifications. 
 
 Starting from scratch, setting up and running a single stage consists of three simple steps:
 
@@ -10,7 +11,7 @@ Starting from scratch, setting up and running a single stage consists of three s
 2. Mounting user-specified files and directories
 3. Running the image as a container
 
-Detailed information about running the images' containers for a specific stage can be found in a Markdown file in its respective directory.
+To run the whole workflow, you must run each image (we are currently working on a fully end-to-end solution). Detailed information about running the images' containers for a specific stage can be found in a Markdown file in its respective directory.
 
 
 ## Published Images
