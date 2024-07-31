@@ -1,5 +1,7 @@
 # Pre-processing Instructions
 
+Image: [jzhang512/preprocessing_shield](https://hub.docker.com/r/jzhang512/preprocessing_shield)
+
 ## Volume Mounts
 Make sure that you have three directories set up on the host machine: `fix`, `workdir`, `GFSvOPER`. They are critical for I/O operations.
 
