@@ -4,6 +4,7 @@
 Make sure that you have two directories set up on the host machine: `rundir` and `GFS_fix`. They are critical for I/O operations.
 
 ### Directory Structure
+Ensure that the structure and naming match exactly these:
 ```
 rundir
 ├── INPUT
@@ -16,6 +17,8 @@ GFS_fix
 Refer to the last section on this page for an example of what files to include (resolution at C48).
 
 ## Run Behavior
+The model script will run immediately upon running the image.
+
 
 ## Run Command Templates
 
