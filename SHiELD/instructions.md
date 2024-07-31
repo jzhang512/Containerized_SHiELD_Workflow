@@ -43,7 +43,7 @@ apptainer exec --bind
 ```
 Replace `/PATH_TO_/` with the actual path on your host machine. Ensure that the paths inside the container are as specified above. 
 
-Since Apptainer does not support the Docker `WORKDIR`, include `cd` command in the run command to achieve the same behavior.
+Since Apptainer does not support the Docker `WORKDIR`, include the `cd` command in the run command to achieve the same behavior.
 
 ## Example Files for Mounted Directories
 
