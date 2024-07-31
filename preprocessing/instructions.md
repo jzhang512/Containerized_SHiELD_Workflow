@@ -34,7 +34,7 @@ Press Ctrl-Z or Ctrl-C to quit.
 ```
 When an option is completed successfully, the container will be exited. If any error occurs, a bash shell will be opened inside the running container. All outputs are saved in `/workdir/outputs`.
 
-*To simplify setting up for running the SHiELD model, we compile all expected SHiELD inputs in `/workdir/outputs/model_inputs/run_date%year%month%dday%Hour%Minute%Second` whenever `chgres_cube.sh` successfully finishes. The files compiled together are outputs from both `driver_grid.gaea.sh` and `chgres_cube.sh`.
+*To simplify setting up for the next stage (running the SHiELD model), we compile this stage's expected SHiELD inputs in `/workdir/outputs/model_inputs/run_date%year%month%dday%Hour%Minute%Second` whenever `chgres_cube.sh` successfully finishes. The files compiled together are outputs from both `driver_grid.gaea.sh` and `chgres_cube.sh`.
 
 ## Run Command Templates
 ### Docker
