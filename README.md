@@ -11,7 +11,7 @@ Starting from scratch, setting up and running a single stage consists of three s
 2. Mounting user-specified files and directories
 3. Running the stage in a container
 
-To run the whole workflow, you must run each image (we are currently working on a fully end-to-end solution).
+To run the whole workflow, you must run each image stage-by-stage.
 
 All default user-specified files and detailed information about running an image container for a specific stage can be found in a Markdown file in their respective directory.
 
