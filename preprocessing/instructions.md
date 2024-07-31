@@ -4,7 +4,7 @@
 Make sure that you have three directories set up on the host machine: `fix`, `workdir`, `GFSvOPER`. They are critical for I/O operations.
 
 ### Directory Structure
-Ensure that the naming matches exactly these:
+Ensure that the structure and naming for the `fix` and `workdir` directories match exactly these:
 ```
 fix
 ├── am
