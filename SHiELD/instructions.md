@@ -17,7 +17,11 @@ GFS_fix
 Refer to the last section on this page for an example of what files to include (resolution at C48).
 
 ## Run Behavior
-The model script will run immediately upon running the image.
+### Configuration
+Configure your run using the `input.nml` and `diag_table` files. They are provided in this same directory. 
+
+### Runtime
+The model script will run immediately upon running the image and will always exit the container. All outputs are in-place modifications of the files given in the `rundir` directory.
 
 
 ## Run Command Templates
@@ -39,9 +43,9 @@ apptainer exec --bind
 ```
 Replace `/PATH_TO_/` with the actual path on your host machine. Ensure that the paths inside the container are as specified above. 
 
-Since Apptainer does not support the Docker `WORKDIR` or `ENTRYPOINT` commands, include initialization commands in the run command to achieve the same behavior.
+Since Apptainer does not support the Docker `WORKDIR`, include `cd` command in the run command to achieve the same behavior.
 
-## Example File Structure for Mounted Directories
+## Example Files for Mounted Directories
 
 ### /rundir
 ```
