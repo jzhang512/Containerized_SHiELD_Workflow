@@ -1,7 +1,7 @@
 # Post-processing Instructions
 
 ## Volume Mounts
-Make sure you have a directory set up on the host machine with your desired files. It will be known as `home` in the container and the directory that the Jupyter Server will have access to.
+Make sure you have a directory set up on the host machine with your desired files. It will be known as `home` in the container and the directory that the Jupyter Server has access to.
 
 ## Run Behavior
 Upon running the image, you will be provided a link for the Jupyter Server. 
