@@ -1,18 +1,63 @@
 # Pre-Processing Instructions
 
-## Run Behavior
-
 ## Volume Mounts
+Make sure that you have three directories set up on the host machine: `fix`, `workdir`, `GFSvOPER`. Refer to the bottom section for an example of what files to include.
+
+## Run Behavior
+Upon running the image, you will be prompted with four options: 
+```
+Enter:
+'a' to generate grid (driver_grid.gaea.sh)
+'b' to create initial conditions (chgres_cube.sh)
+'c' to run both (driver_grid.gaea.sh then chgres_cube.sh)
+'d' for manual access
+Press Ctrl-Z or Ctrl-C to quit.
+```
 
 ## Run Command Templates
 ### Docker
 ```
 docker run -it \
-  -v "/PATH_TO_/fix_data:/UFS_UTILS/fix" \
+  -v "/PATH_TO_/fix:/UFS_UTILS/fix" \
   -v "/PATH_TO_/workdir:/workdir" \
   -v "/PATH_TO_/GFSvOPER:/GFSvOPER" \
   jzhang512/preprocessing_shield
 ```
 ### Apptainer 
+```
+apptainer exec --bind
+  /PATH_TO_/fix:/UFS_UTILS/fix,
+  /PATH_TO_/workdir:/workdir,
+  /PATH_TO_/GFSvOPER:/GFSvOPER
+  preprocessing_shield_latest.sif /PATH_TO_/preprocessing_entrypoint.sh
+```
 
 Replace `/PATH_TO_/` with the actual path on your host machine. Ensure that the paths inside the container are as specified above. 
+
+Since Apptainer does not support the Docker `ENTRYPOINT` command, include the entrypoint script in the run command to achieve the same behavior.
+
+## Example File Structure for Mounted Directories
+
+### /fix
+```
+/fix
+├── /am
+│   └── global_hyblev.l65.txt
+├── /orog_raw
+│   ├── gmted2010.30sec.int
+│   ├── landcover30.fixed
+│   └── thirty.second.antarctic.new.bin
+└── /sfc_climo
+    ├── facsf.1.0.nc
+    ├── maximum_snow_albedo.0.05.nc
+    ├── slope_type.1.0.nc
+    ├── snowfree_albedo.4comp.0.05.nc
+    ├── soil_color.clm.0.05.nc
+    ├── soil_type.bnu.v3.30s.nc
+    ├── soil_type.statsgo.0.05.nc
+    ├── substrate_temperature.gfs.0.5.nc
+    ├── vegetation_greenness.0.144.nc
+    ├── vegetation_type.modis.igbp.0.05.nc
+    └── vegetation_type.viirs.v3.igbp.30s.nc
+```
+
