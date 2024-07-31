@@ -11,4 +11,4 @@ Upon running the image, you will be provided a link for the Jupyter link.
 ```
 docker run -v .\:/home -p 8888:8888 jzhang512/visualization_shield
 ```
-If you use this command below, make sure you are in the directory you want Jupyter to access before running it.
+If you use this command, make sure you are in the directory you want Jupyter to access before running it.
