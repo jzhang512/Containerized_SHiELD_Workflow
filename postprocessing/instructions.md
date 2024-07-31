@@ -1,6 +1,6 @@
 # Post-processing Instructions
 
-Image: [jzhang512/postprocessing_shield](https://hub.docker.com/r/jzhang512/postprocessing_shield)
+Image: [jzhang512/visualization_shield](https://hub.docker.com/r/jzhang512/visualization_shield)
 
 ## Volume Mounts
 Make sure you have a directory set up on the host machine with your desired files. It will be known as `home` in the container and the directory that the Jupyter Server has access to.
