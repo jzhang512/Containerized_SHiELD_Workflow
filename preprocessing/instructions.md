@@ -1,7 +1,7 @@
 # Pre-Processing Instructions
 
 ## Volume Mounts
-Make sure that you have three directories set up on the host machine: `fix`, `workdir`, `GFSvOPER`. Refer to the bottom section for an example of what files to include.
+Make sure that you have three directories set up on the host machine: `fix`, `workdir`, `GFSvOPER`. Refer to the last section on this page for an example of what files to include.
 
 ## Run Behavior
 Upon running the image, you will be prompted with four options: 
