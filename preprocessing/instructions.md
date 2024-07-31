@@ -24,7 +24,7 @@ Refer to the last section on this page for an example of what files to include.
 
 ## Run Behavior
 ### Configuration
-Configure your run using the `driver_grid.gaea.sh`,`chgres_cube.sh`, and `preprocessing_config.sh` scripts. They are provided [here](https://github.com/jzhang512/Containerized_SHiELD_Workflow/tree/main/preprocessing/workdir/driver_scripts). We created `preprocessing_config.sh` to simplify the process by compiling all settings in a single unified script.
+Configure your run using the `driver_grid.gaea.sh`,`chgres_cube.sh`, and `preprocessing_config.sh` scripts. They are provided [here](https://github.com/jzhang512/Containerized_SHiELD_Workflow/tree/main/preprocessing/workdir/driver_scripts). We created `preprocessing_config.sh` to simplify the process by having all settings in a single unified script.
 
 Upon running the image, you will be prompted with four options: 
 ```
