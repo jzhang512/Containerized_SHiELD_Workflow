@@ -1,10 +1,10 @@
 # Post-processing Instructions
 
 ## Volume Mounts
-Make sure you have a directory set up on the host machine: `home`. This will be the directory that the Jupyter will have access to.
+Make sure you have a directory set up on the host machine: `home`. This will be the directory that the Jupyter Server will have access to.
 
 ## Run Behavior
-Upon running the image, you will be provided a link for the Jupyter link. 
+Upon running the image, you will be provided a link for the Jupyter Server. 
 
 ## Run Command Templates
 ### Docker
