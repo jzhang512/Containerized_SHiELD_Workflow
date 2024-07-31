@@ -1,9 +1,10 @@
 # Pre-Processing Instructions
 
 ## Volume Mounts
-Make sure that you have three directories set up on the host machine **with the exact naming**: `fix`, `workdir`, `GFSvOPER`. They are critical for I/O operations.
+Make sure that you have three directories set up on the host machine: `fix`, `workdir`, `GFSvOPER`. They are critical for I/O operations.
 
 ### Directory Structure
+Ensure that the naming matches exactly these:
 ```
 fix
 ├── am
