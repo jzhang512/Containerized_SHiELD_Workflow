@@ -1,6 +1,6 @@
 <img width="813" alt="Screenshot 2024-07-29 at 3 43 59 PM" src="https://github.com/user-attachments/assets/425090e3-0406-4a21-b06f-024b9258b2c7">
 
-We render the workflow of using Geophysical Fluid Dynamics Laboratory (GFDL)'s System for High-resolution modeling for Earth-to-Local Domains (SHiELD) into three stages: pre-processing, model execution, post-processing. Although we primarily use Docker, the images are also compatible with Apptainer.
+We render the workflow of using Geophysical Fluid Dynamics Laboratory (GFDL)'s System for High-resolution modeling for Earth-to-Local Domains (SHiELD) into three stages: pre-processing, model execution, post-processing. Although we primarily use Docker, the images are also compatible with Apptainer (formerly Singularity).
 
 ## Usage
 Each stage has its own image, which can be pulled directly from DockerHub (see below). If you would like to make further your own modifications, we also provide the Dockerfiles and the corresponding scripts used in the image build process. 
