@@ -16,7 +16,7 @@ rundir
 ```
 GFS_fix
 ```
-Refer to the last section on this page for an example of what files to include (resolution at C48).
+Refer to the last section on this page for an example of what files to include (example's resolution is C48). You can download the recent GFS analyses [here](https://www.nco.ncep.noaa.gov/pmb/products/gfs/).
 
 ## Run Behavior
 ### Configuration

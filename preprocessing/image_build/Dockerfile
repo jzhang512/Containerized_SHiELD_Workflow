@@ -69,16 +69,17 @@ ARG OPENMPI_DIR UFS_UTILS_EXEC_DIR UFS_UTILS_USH_DIR
 COPY --from=env-image ${OPENMPI_DIR} ${OPENMPI_DIR}
 COPY --from=env-image ${UFS_UTILS_EXEC_DIR} ${UFS_UTILS_EXEC_DIR}
 COPY --from=env-image ${UFS_UTILS_USH_DIR} ${UFS_UTILS_USH_DIR}
+COPY --from=env-image /ufs_utils_libs/install/bin/ncdump /ufs_utils_libs/install/bin/ncdump
 
 # Redeclare (does not carry over from env-image, previous build stage)
-ENV PATH ${OPENMPI_DIR}/bin:$PATH
+ENV PATH ${OPENMPI_DIR}/bin:/ufs_utils_libs/install/bin:$PATH
 
 # Non-root user for parallel computing
 RUN adduser preprocesser \
  && mkdir /workdir \
  && chown preprocesser /workdir
 
-#USER preprocesser
+USER preprocesser
 WORKDIR /workdir
 
 COPY preprocessing_entrypoint.sh /preprocessing_entrypoint.sh

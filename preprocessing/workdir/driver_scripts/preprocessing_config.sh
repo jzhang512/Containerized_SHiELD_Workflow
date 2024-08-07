@@ -10,7 +10,7 @@ caller_script=$1
 # SET CONFIGURATIONS HERE.
 if [ "$caller_script" = "driver_grid.gaea.sh" ]; then
 
-    export gtype=uniform     # 'uniform', 'stretch', 'nest', 
+    export gtype=nest     # 'uniform', 'stretch', 'nest', 
                                # 'regional_gfdl', 'regional_esg'
 
     export make_gsl_orog=false    # When 'true' will output 'oro' files for 
@@ -73,7 +73,7 @@ if [ "$caller_script" = "driver_grid.gaea.sh" ]; then
     #-----------------------------------------------------------------------
 
     export APRUN=time
-    export APRUN_SFC="mpirun -oversubscribe -np 48"
+    export APRUN_SFC="mpirun -oversubscribe -np 6"
     export OMP_NUM_THREADS=48
     export OMP_STACKSIZE=2048m
     export machine=GAEA
@@ -84,9 +84,9 @@ else  # chgres_cube.sh
    # analysistyp: the format of GFS analysis. It can be gaussian_netcdf, gaussian_nemsio, gfs_gaussian_nemsio, and gfs_sigio, depending on the version of GFS.
    analysistype='gaussian_netcdf'
    # gridtype: model grid configuration. It can be global or nest. Multiple nesting is not supported yet.
-   gridtype='global'
+   gridtype='nest'
    # res: cubed-sphere resolution
-   res=48
+   res=96
    # analysislevfile: vertical levels of the IC. Use the same as the GFS analysis is recommended.
    analysislevfile='global_hyblev.l65.txt'
    if [ -z "$CDATE" ]; then
@@ -95,7 +95,7 @@ else  # chgres_cube.sh
      # 2018051100 for gfs_gaussian_nemsio;
      # 2016080100 for gfs_sigio
      # 2022010100 for gaussian_netcdf
-     CDATE=2022010100
+     CDATE=2021082900
    fi
    ICDIR=/workdir/outputs/SHiELD_IC/GLOBAL_C${res}
    UTILSDIR=/UFS_UTILS

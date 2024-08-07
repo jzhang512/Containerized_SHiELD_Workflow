@@ -2,6 +2,8 @@
 
 Image: [jzhang512/preprocessing_shield](https://hub.docker.com/r/jzhang512/preprocessing_shield)
 
+If building your own image, ensure that the scripts `compile_exitpoint.sh` and `preprocessing_entrypoint.sh` are **in the same directory** as the Dockerfile.
+
 ## Volume Mounts
 Make sure that you have three directories set up on the host machine: `fix`, `workdir`, `GFSvOPER`. They are critical for I/O operations.
 
@@ -22,7 +24,7 @@ workdir
 GFSvOPER
 └── 2016080100
 ```
-Refer to the last section on this page for an example of what files to include.
+Refer to the last section on this page for an example of what files to include. You can download `fix` data [here](https://noaa-ufs-srw-pds.s3.amazonaws.com/index.html#develop-20240618/fix/).
 
 ## Run Behavior
 ### Configuration
@@ -81,12 +83,10 @@ fix
     ├── slope_type.1.0.nc
     ├── snowfree_albedo.4comp.0.05.nc
     ├── soil_color.clm.0.05.nc
-    ├── soil_type.bnu.v3.30s.nc
     ├── soil_type.statsgo.0.05.nc
     ├── substrate_temperature.gfs.0.5.nc
     ├── vegetation_greenness.0.144.nc
-    ├── vegetation_type.modis.igbp.0.05.nc
-    └── vegetation_type.viirs.v3.igbp.30s.nc
+    └── vegetation_type.modis.igbp.0.05.nc
 ```
 
 ### workdir
