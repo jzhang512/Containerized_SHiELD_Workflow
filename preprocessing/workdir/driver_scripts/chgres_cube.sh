@@ -173,7 +173,7 @@ cat <<EOF >$WORKDIR/fort.41
  convert_atm=.true.
  convert_sfc=.true.
  convert_nst=.false.
- input_type=$analysistype
+ input_type="$analysistype"
  tracers=$tracerout
  tracers_input=$tracerin
  regional=0
