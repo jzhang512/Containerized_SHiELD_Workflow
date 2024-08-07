@@ -114,5 +114,6 @@ ENV PATH=${OPENMPI_DIR}/bin:${FRENCTOOLS_DIR}/bin:$PATH \
 	  USER=shield
 
 RUN adduser shield
-
 WORKDIR /workdir
+RUN chown shield /workdir
+USER shield
