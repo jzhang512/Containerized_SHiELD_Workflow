@@ -1,6 +1,6 @@
 # Pre-processing Instructions
 
-Image: [jzhang512/preprocessing_shield](https://hub.docker.com/r/jzhang512/preprocessing_shield)
+Image: [gfdlfv3/preprocessing](https://hub.docker.com/r/gfdlfv3/preprocessing)
 
 If building your own image, ensure that the scripts `compile_exitpoint.sh` and `preprocessing_entrypoint.sh` are **in the same directory** as the Dockerfile.
 
