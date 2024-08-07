@@ -1,6 +1,6 @@
 # Model Execution Instructions
 
-Image: [jzhang512/execution_shield](https://hub.docker.com/r/jzhang512/execution_shield)
+Image: [gfdlfv3/shield](https://hub.docker.com/r/gfdlfv3/shield)
 
 ## Volume Mounts
 Make sure that you have two directories set up on the host machine: `rundir` and `GFS_fix`. They are critical for I/O operations.
