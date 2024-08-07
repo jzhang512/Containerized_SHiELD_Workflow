@@ -55,11 +55,6 @@ source /workdir/driver_scripts//preprocessing_config.sh "$(basename $0)"
 set -x
 set -e  # exit on error
 
-#source ../sorc/machine-setup.sh > /dev/null 2>&1
-#. ${MODULESHOME}/init/sh
-#module use ../modulefiles
-#module load build.gaea.intel
-#module list
 
 #-----------------------------------------------------------------------
 # Set grid specs here.
@@ -111,15 +106,15 @@ elif [ $gtype = stretch ]; then
 elif [ $gtype = nest ] || [ $gtype = regional_gfdl ]; then
   export add_lake=false        # Add lake frac and depth to orography data.
   export lake_cutoff=0.20      # lake frac < lake_cutoff ignored when add_lake=T
-  export res=768
+  export res=96
   export stretch_fac=1.000001       # Stretching factor for the grid
-  export target_lon=-97.5      # Center longitude of the highest resolution tile
-  export target_lat=39.5       # Center latitude of the highest resolution tile
-  export refine_ratio=5        # The refinement ratio
-  export istart_nest=337        # Starting i-direction index of nest grid in parent tile supergrid
-  export jstart_nest=529        # Starting j-direction index of nest grid in parent tile supergrid
-  export iend_nest=1200         # Ending i-direction index of nest grid in parent tile supergrid
-  export jend_nest=1008         # Ending j-direction index of nest grid in parent tile supergrid
+  export target_lon=-85.0      # Center longitude of the highest resolution tile
+  export target_lat=30.0       # Center latitude of the highest resolution tile
+  export refine_ratio=3        # The refinement ratio
+  export istart_nest=61        # Starting i-direction index of nest grid in parent tile supergrid
+  export jstart_nest=61        # Starting j-direction index of nest grid in parent tile supergrid
+  export iend_nest=132         # Ending i-direction index of nest grid in parent tile supergrid
+  export jend_nest=132         # Ending j-direction index of nest grid in parent tile supergrid
   export halo=3                # Lateral boundary halo
 elif [ $gtype = regional_esg ] ; then
   export res=-999              # equivalent resolution is computed
@@ -185,7 +180,7 @@ fi
 
 if [ $gtype = nest ] ; then
   out_dir_nest=$out_dir
-  export out_dir=/lustre/f2/scratch/$LOGNAME/regional_grid_tmp
+  export out_dir=${TEMP_DIR}/regional_grid_tmp
 
   # create a regional grid that is exactly the same as the nested domain and filter it 
   export gtype=regional_gfdl
@@ -196,7 +191,7 @@ if [ $gtype = nest ] ; then
   mv $orog_filt $out_dir_nest/C${res}/C${res}_oro_data.tile7.nc
   
   # replace fix files 
-  fix_files=("facsf" "maximum_snow_albedo" "slope_type" "snowfree_albedo" "soil_type" "substrate_temperature" "vegetation_greenness" "vegetation_type")
+  fix_files=("facsf" "maximum_snow_albedo" "slope_type" "snowfree_albedo" "soil_type" "soil_color" "substrate_temperature" "vegetation_greenness" "vegetation_type")
 
   for val in ${fix_files[*]}; do
     fix_file=$(find $out_dir  -iname "*$val.tile7.halo0.nc" -type f -printf '%T@ %p\n' | sort -n | tail -1 | cut -f2- -d" ")
