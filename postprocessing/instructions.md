@@ -1,18 +1,10 @@
-# Post-processing Instructions
+# Postprocessing Instructions
+Containerization of GFDL [FRE-NCtools](https://github.com/NOAA-GFDL/FRE-NCtools/tree/main/tools)
 
-Image: [gfdlfv3/visualization](https://hub.docker.com/r/gfdlfv3/visualization)
+Docker image: [gfdlfv3/fre-nctools](https://hub.docker.com/r/gfdlfv3/fre-nctools)
 
-If building your own image, ensure that the script `start-notebook.sh` is **in the same directory** as the Dockerfile.
-
-## Volume Mounts
-Make sure you have a directory set up on the host machine with your desired files. It will be known as `home` in the container and the directory that the Jupyter Server has access to.
-
-## Run Behavior
-Upon running the image, you will be provided a link for the Jupyter Server. 
-
-## Run Command Templates
-### Docker
+# Example
+Remap C96 data onto 1- by 1-degree latitude-longitude grid. Use SHiELD C96 global-nest simulation of Hurricane Ida as an example
 ```
-docker run -v .\:/home -p 8888:8888 jzhang512/visualization_shield
+docker run -v ./global_nest_Ida/:/workdir gfdlfv3/fre-nctools fregrid --input_mosaic ./INPUT/C96_coarse_mosaic.nc --nlon 360 --nlat 180 --interp_method conserve_order1 --input_file atmos_sos --output_file atmos_sos_ltd.nc --scalar_field PRMSL,TMP2m,DPT2m,PRATEsfc,ULWRFtoa
 ```
-If you use this command, make sure you are in the directory you want Jupyter to access before running it.
