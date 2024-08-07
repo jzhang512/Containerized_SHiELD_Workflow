@@ -18,11 +18,11 @@ mkdir -p "$RUN_OUTPUT_DIR"
 
 cd $GRIDDIR  # set by chgres_cube.sh
 
-cp C48_grid.tile?.nc /workdir/outputs/model_inputs/run_${TIMESTAMP}
-cp C48_mosaic.nc /workdir/outputs/model_inputs/run_${TIMESTAMP}/grid_spec.nc
+cp C${res}_grid.tile?.nc /workdir/outputs/model_inputs/run_${TIMESTAMP}
+cp C${res}_mosaic.nc /workdir/outputs/model_inputs/run_${TIMESTAMP}/grid_spec.nc
 
-for file in C48_oro_data.tile?.nc; do
-  cp "$file" "/workdir/outputs/model_inputs/run_${TIMESTAMP}/${file#C48_}"
+for file in C${res}_oro_data.tile?.nc; do
+  cp "$file" "/workdir/outputs/model_inputs/run_${TIMESTAMP}/${file#C${res}_}"
 done
 
 cd $ICDIR
