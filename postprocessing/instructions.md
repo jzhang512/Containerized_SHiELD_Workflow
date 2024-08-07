@@ -1,6 +1,6 @@
 # Post-processing Instructions
 
-Image: [jzhang512/visualization_shield](https://hub.docker.com/r/jzhang512/visualization_shield)
+Image: [gfdlfv3/visualization](https://hub.docker.com/r/gfdlfv3/visualization)
 
 If building your own image, ensure that the script `start-notebook.sh` is **in the same directory** as the Dockerfile.
 
