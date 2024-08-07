@@ -1,4 +1,4 @@
-<img width="813" alt="Screenshot 2024-07-29 at 3 43 59 PM" src="https://github.com/user-attachments/assets/425090e3-0406-4a21-b06f-024b9258b2c7">
+<img width="787" alt="Screenshot 2024-08-07 at 11 55 16 AM" src="https://github.com/user-attachments/assets/6f72fd40-dbfb-4a4a-8360-06056678c9fb">
 
 We render the workflow of using Geophysical Fluid Dynamics Laboratory (GFDL)'s System for High-resolution modeling for Earth-to-Local Domains (SHiELD) into three stages: pre-processing, model execution, post-processing. Although we primarily use Docker, the images are also compatible with Apptainer (formerly Singularity).
 
@@ -20,15 +20,15 @@ All default user-specified files and detailed information about running a specif
 All three images were built using Docker's multi-arch functionality and publicly availiable on DockerHub. They each currently support ARM64 and AMD64.
 
 ```
-docker pull jzhang512/preprocessing_shield
+docker pull gfdlfv3/preprocessing
 ```
 
 ```
-docker pull jzhang512/execution_shield
+docker pull gfdlfv3/shield
 ```
 
 ```
-docker pull jzhang512/visualization_shield
+docker pull gfdlfv3/visualization
 ```
 
 For security, we use Docker Content Trust (DCT). Verify that the `SIGNER` is `gfdl_shield` and `KEY` is `b774a2813968`.
@@ -36,5 +36,5 @@ For security, we use Docker Content Trust (DCT). Verify that the `SIGNER` is `gf
 For systems using Apptainer, pull the image like:
 
 ```
-apptainer pull docker://jzhang512/preprocessing_shield
+apptainer pull docker://gfdlfv3/preprocessing
 ```
