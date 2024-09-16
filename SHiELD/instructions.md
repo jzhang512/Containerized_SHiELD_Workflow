@@ -31,7 +31,7 @@ The model script will run immediately upon running the image and will always exi
 ### Docker
 ```
 docker run -it --cap-add=SYS_PTRACE --ulimit='stack=-1:-1' \
- -v "/PATH_TO_/2022010100_C48/:/rundir" \
+ -v "/PATH_TO_/rundir/:/rundir" \
  -v "/PATH_TO_/GFS_fix/:/GFS_fix" \
  -it gfdlfv3/shield mpirun -np 6 -oversubscribe SHiELD_nh.prod.32bit.x%   
 ```
@@ -39,7 +39,7 @@ docker run -it --cap-add=SYS_PTRACE --ulimit='stack=-1:-1' \
 ### Apptainer
 ```
 apptainer exec --bind
-  /PATH_TO_/2022010100_C48/:/rundir,
+  /PATH_TO_/rundir/:/rundir,
   /PATH_TO_/GFS_fix/:/GFS_fix
   shield_latest.sif cd /rundir && mpirun -np 6 -oversubscribe SHiELD_nh.prod.32bit.x
 ```
