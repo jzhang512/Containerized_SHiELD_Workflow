@@ -51,7 +51,7 @@ docker run -it \
   -v "/PATH_TO_/fix:/UFS_UTILS/fix" \
   -v "/PATH_TO_/workdir:/workdir" \
   -v "/PATH_TO_/GFSvOPER:/GFSvOPER" \
-  gfdlfv3/shield
+  gfdlfv3/preprocessing
 ```
 ### Apptainer 
 ```
@@ -59,7 +59,7 @@ apptainer exec --bind
   /PATH_TO_/fix:/UFS_UTILS/fix,
   /PATH_TO_/workdir:/workdir,
   /PATH_TO_/GFSvOPER:/GFSvOPER
-  shield_latest.sif /PATH_TO_/preprocessing_entrypoint.sh
+  preprocessing_latest.sif /PATH_TO_/preprocessing_entrypoint.sh
 ```
 
 Replace `/PATH_TO_/` with the actual path on your host machine. Ensure that the paths inside the container are as specified above. 
