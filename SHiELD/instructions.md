@@ -33,7 +33,7 @@ The model script will run immediately upon running the image and will always exi
 docker run -it --cap-add=SYS_PTRACE --ulimit='stack=-1:-1' \
  -v "/PATH_TO_/2022010100_C48/:/rundir" \
  -v "/PATH_TO_/GFS_fix/:/GFS_fix" \
- -it jzhang512/execution_shield mpirun -np 6 -oversubscribe SHiELD_nh.prod.32bit.x%   
+ -it gfdlfv3/shield mpirun -np 6 -oversubscribe SHiELD_nh.prod.32bit.x%   
 ```
 
 ### Apptainer
@@ -41,7 +41,7 @@ docker run -it --cap-add=SYS_PTRACE --ulimit='stack=-1:-1' \
 apptainer exec --bind
   /PATH_TO_/2022010100_C48/:/rundir,
   /PATH_TO_/GFS_fix/:/GFS_fix
-  execution_shield_latest.sif cd /rundir && mpirun -np 6 -oversubscribe SHiELD_nh.prod.32bit.x
+  shield_latest.sif cd /rundir && mpirun -np 6 -oversubscribe SHiELD_nh.prod.32bit.x
 ```
 Replace `/PATH_TO_/` with the actual path on your host machine. Ensure that the paths inside the container are as specified above. 
 
