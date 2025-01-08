@@ -2,7 +2,7 @@
 
 Image: [gfdlfv3/shield](https://hub.docker.com/r/gfdlfv3/shield)
 
-## Volume Mounts
+## Bind Mounts
 Make sure that you have two directories set up on the host machine: `rundir` and `GFS_fix`. They are critical for I/O operations.
 
 ### Directory Structure
