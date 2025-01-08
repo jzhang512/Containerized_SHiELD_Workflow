@@ -4,7 +4,7 @@ Image: [gfdlfv3/preprocessing](https://hub.docker.com/r/gfdlfv3/preprocessing)
 
 If building your own image, ensure that the scripts `compile_exitpoint.sh` and `preprocessing_entrypoint.sh` are **in the same directory** as the Dockerfile.
 
-## Volume Mounts
+## Bind Mounts
 Make sure that you have three directories set up on the host machine: `fix`, `workdir`, `GFSvOPER`. They are critical for I/O operations.
 
 ### Directory Structure
