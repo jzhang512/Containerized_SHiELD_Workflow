@@ -4,7 +4,7 @@ Image: [gfdlfv3/visualization](https://hub.docker.com/r/gfdlfv3/visualization)
 
 If building your own image, ensure that the script `start-notebook.sh` is **in the same directory** as the Dockerfile.
 
-## Volume Mounts
+## Bind Mounts
 Make sure you have a directory set up on the host machine with your desired files. It will be known as `workdir` in the container and the directory that the Jupyter Server has access to.
 
 ## Run Behavior
